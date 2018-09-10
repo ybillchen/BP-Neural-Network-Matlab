@@ -2,7 +2,7 @@
 
 ## Description
 
-BP neural network in Matlab. Edition 1.0.
+BP neural network in Matlab. Edition 1.1.
 
 ## Tutorial
 
