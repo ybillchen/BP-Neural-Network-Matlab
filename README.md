@@ -18,7 +18,7 @@ If your input size and output size are both 1, you can run film.m to generate a 
 plot(x, y)
 ```
 
-NOTE: if the code above does not work, continue BP.train for a while and pause again. It is probably beacuse the script stops at an other workspace.
+NOTE: if the code above does not work, continue BPtrain.m for a while and pause again. It is probably beacuse the script stops at an other workspace.
 
 Enjoy your time with BPNN and Matlab! Suggestions and adjustments(as well as STARs) are welcomed.
 
