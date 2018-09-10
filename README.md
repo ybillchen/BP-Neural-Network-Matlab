@@ -2,11 +2,11 @@
 
 ## Description
 
-BP neural network in Matlab.
+BP neural network in Matlab. Edition 1.0.
 
 ## Tutorial
 
-The program is used to generate and train a BP neural network with the primary application of Matlab. I choose Sigmoid as the activation function of the hidden layer, and Linear function as the activation function of the output layer.
+The program is used to generate and train a BP neural network with the primary application of Matlab. Both sigmoid and tanh can be chosen as the activation function of the hidden layer, and Linear function as the activation function of the output layer.
 
 Before running the program, you should add all the files into Matlab path. You'd better run the program in BPtrain.m unless you want to improve my code.
 
@@ -22,4 +22,4 @@ NOTE: if the code above does not work, continue BP.train for a while and pause a
 
 Enjoy your time with BPNN and Matlab! Suggestions and adjustments(as well as STARs) are welcomed.
 
-Created 7/9/2018 by Bill in Beijing
+Created 10/9/2018 by Bill in Beijing
