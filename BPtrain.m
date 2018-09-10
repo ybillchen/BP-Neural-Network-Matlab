@@ -10,7 +10,6 @@ nhidden = 80; % number of neurons in hidden layer
 learningRate = 0.01; % learning rate
 times = 10000000; % training times
 checkInterval = 100;
-activationFunction = 'tanh';
 
 nin = length(trainIn(:, 1)); % length of input vector
 nout = length(trainOut(:, 1)); % length of output vector
@@ -35,24 +34,15 @@ for i = 1 : times
     for j = 1:trainSize
         % feed forward
         tempHidden = l1.run(trainIn(:, j));
-        if activationFunction == 'tanh'
-            tempOut = l2.run(tanh(tempHidden));
-        elseif activationFunction == 'sigmoid'
-            tempOut = l2.run(sigmoid(tempHidden));
-        end
+        tempOut = l2.run(sigmoid(tempHidden));
         loss = sumsqr(tempOut - trainOut(:, j)); % loss function
         tloss = tloss + loss;
         
         % back propagation
         a = 2 * (tempOut - trainOut(:, j));
         l2.b = l2.b - learningRate * a;
-        if activationFunction == 'tanh'
-            l2.w = l2.w - learningRate * (tanh(tempHidden)' .* a);
-            b = (dtanh(tempHidden) .* (l2.w' * a));
-        elseif activationFunction == 'sigmoid'
-            l2.w = l2.w - learningRate * (sigmoid(tempHidden)' .* a);
-            b = (dsigmoid(tempHidden) .* (l2.w' * a));
-        end
+        l2.w = l2.w - learningRate * (sigmoid(tempHidden)' .* a);
+        b = (dsigmoid(tempHidden) .* (l2.w' * a));
         l1.b = l1.b - learningRate * b;
         l1.w = l1.w - learningRate * (trainIn(:, j)' .* b); 
     end
@@ -65,7 +55,7 @@ for i = 1 : times
             x = [x, trainIn'];
             y = [y, trainOut'];
             for k = 1 : length(x(:, 1))
-                y(k, end) = BPrun(l1, l2, x(k, end), activationFunction);
+                y(k, end) = BPrun(l1, l2, x(k, end));
             end
         end
         
