@@ -17,6 +17,3 @@ If your input size and output size are both one, you can run `film.m` to generat
 ![GIF](gif180906.gif)
 
 Enjoy your time with BPNN and Matlab! Feel free to raise an issue!
-
-Created 7/9/2018 by Bill in Beijing.  
-Last modified 15/8/2021 by Bill in Chengdu. 
